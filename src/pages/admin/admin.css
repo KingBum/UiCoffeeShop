@@ -1,0 +1,55 @@
+.admin{
+    max-width: 1250px;
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.wrapperAdmin{
+    margin-top: 10rem;
+}
+
+.adminTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th{
+    font-size: 2rem;
+}
+
+td{
+    font-size: 1.4rem;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+}
+
+.actions{
+    cursor: pointer;
+}
+
+.actions .edit{
+    color: green;
+    font-weight: 500;
+    margin-right: 2rem;
+}
+
+.actions .delete{
+    color: red;
+}
+
+.adminImage{
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}

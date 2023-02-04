@@ -1,0 +1,66 @@
+.book {
+    background: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.book form {
+    margin: 0 auto 2rem auto;
+    max-width: 60rem;
+    border-radius: var(--border-radius-hover);
+    padding: 3rem;
+    border: var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.book form .box {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    background: none;
+    text-transform: none;
+    color: var(--main-color);
+    border: var(--border);
+    margin: .7rem 0;
+}
+
+.book form .box:focus {
+    border: var(--border-hover);
+}
+
+.book form textarea {
+    height: 15rem;
+    resize: none;
+}
+
+.register{
+    margin-top: 10rem;
+}
+
+.imgCreateInput{
+    width : 5rem;
+    height : 5rem;
+}
+
+.createBtn{
+    width : 10rem;
+}
+
+.createImg{
+    flex : 1;
+    width : 30rem;
+    height : 30rem;
+    object-fit: contain;
+}
+
+.mainCreate{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainCreate form {
+    flex : 1
+}
