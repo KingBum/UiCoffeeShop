@@ -28,12 +28,12 @@ export default function Create() {
       data.append("file", file);
       newProduct.img = filename;
       try {
-        await axios.post("/upload", data);
+        await axios.post("https://json-app-coffee.herokuapp.com/api/upload", data);
       } catch (err) { }
     }
     try {
-      await axios.post("/products", newProduct);
-      window.location.replace("http://localhost:3000/");
+      await axios.post("https://json-app-coffee.herokuapp.com/api/products", newProduct);
+      window.location.replace("https://coffee-shop-kingbum.herokuapp.com/");
     } catch (err) { }
   };
   return (

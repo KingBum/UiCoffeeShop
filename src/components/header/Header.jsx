@@ -8,7 +8,7 @@ export default function Header() {
 
     const handleLogout = () => {
         localStorage.removeItem("user")
-        window.location.replace("http://localhost:3000/")
+        window.location.replace("https://coffee-shop-kingbum.herokuapp.com/")
     }
 
     return (

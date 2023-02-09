@@ -13,12 +13,12 @@ export default function Booking() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const res = await axios.post("/reviews/", {
+          const res = await axios.post("https://json-app-coffee.herokuapp.com/api/reviews/", {
             username : user.user._id,
             desc: desc.current.value,
             voted: voted.current.value,
           });
-          res.data && window.location.replace("http://localhost:3000/");    
+          res.data && window.location.replace("https://coffee-shop-kingbum.herokuapp.com/");    
         } catch (err) {
         }
       };

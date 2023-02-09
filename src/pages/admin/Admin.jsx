@@ -15,7 +15,7 @@ export default function Admin() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/products/${id}`, {
+      await axios.delete(`https://json-app-coffee.herokuapp.com/api/products/${id}`, {
         data: { isAdmin: user.isAdmin },
       });
       window.location.replace("/adminboard");
@@ -24,7 +24,7 @@ export default function Admin() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get("/products/");
+      const res = await axios.get("https://json-app-coffee.herokuapp.com/api/products/");
       setMenu(
         res.data.sort((p1, p2) => {
           return new Date(p2.createdAt) - new Date(p1.createdAt);

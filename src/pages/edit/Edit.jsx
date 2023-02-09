@@ -24,7 +24,7 @@ export default function Edit() {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
-        `/products/${location.pathname.split("/")[2]}`
+        `https://json-app-coffee.herokuapp.com/api/products/${location.pathname.split("/")[2]}`
       );
       setDesc(res.data.desc)
       setTitle(res.data.title)
@@ -49,12 +49,12 @@ export default function Edit() {
       data.append("file", file);
       newProduct.img = filename;
       try {
-        await axios.post("/upload", data);
+        await axios.post("https://json-app-coffee.herokuapp.com/api/upload", data);
       } catch (err) {}
     }
     try {
       await axios.put(
-        `/products/${location.pathname.split("/")[2]}`,
+        `https://json-app-coffee.herokuapp.com/api/products/${location.pathname.split("/")[2]}`,
         newProduct
       );
       window.location.replace("/adminboard");

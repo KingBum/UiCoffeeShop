@@ -15,7 +15,7 @@ export default function Register() {
     const handleClick = async (e) => {
         e.preventDefault();
         try {
-          const res = await axios.post("/auth/register", {
+          const res = await axios.post("https://json-app-coffee.herokuapp.com/api/auth/register", {
             username: username.current.value,
             password: password.current.value,
           });
