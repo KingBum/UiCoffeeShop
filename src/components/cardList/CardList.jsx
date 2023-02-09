@@ -17,6 +17,7 @@ export default function CardList() {
     return (
         <div className="cardlist">
             <div className="box-container">
+              {typeof(menu)}
                 {menu.map((item, index) => (
                     <CardItem key={index} item={item} />
                 ) )}

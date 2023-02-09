@@ -21,6 +21,7 @@ export default function Review() {
             <Heading title="reviews" mainTitle="what people says" />
             <div className="swiper review-slider">
                 <div className="swiper-wrapper">
+                    {typeof(reivews)}
                     {reivews.slice(0,3).map((item, index) =>(
                         <CardReview key={index} userReview={item} />
                     ))}
