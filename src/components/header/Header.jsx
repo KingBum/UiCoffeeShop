@@ -34,7 +34,7 @@ export default function Header() {
                         <span>{user.user.username || "Anonymous"}</span>
                     </div>
                     <div onClick={handleLogout} className="btn">LOGOUT</div>
-                </div>) : <Link className='link' to="/login">
+                </div>) : <Link className='link' to="https://coffee-shop-kingbum.herokuapp.com/login">
                 <div className="btn">Login for book a table</div></Link>}
             </div>
         </header>
