@@ -10,7 +10,7 @@ export default function Review() {
     useEffect(() => {
         const fetchPosts = async () => {
           const res = await axios.get("/reviews/")
-          const covert = JSON.parse(res.data)
+          const covert = res.data.json()
           setReviews(covert.sort((p1,p2) => {
             return new Date(p2.createdAt) - new Date(p1.createdAt)
           }))
