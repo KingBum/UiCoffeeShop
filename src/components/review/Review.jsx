@@ -11,7 +11,12 @@ export default function Review() {
     useEffect(() => {
         const fetchPosts = async () => {
           const res = await axios.get("/reviews/")
-          setReviews(res.data)
+          console.log(typeof(reivews))
+          console.log(typeof(res.data))
+          setReviews(res.data.sort((p1,p2) => {
+            return new Date(p2.createdAt) - new Date(p1.createdAt)
+          }))
+          console.log(typeof(reivews))
         }
         fetchPosts()
       }, [])

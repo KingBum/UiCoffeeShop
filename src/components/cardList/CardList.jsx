@@ -5,12 +5,15 @@ import axios from "axios"
 
 export default function CardList() {
     const [menu, setMenu] = useState([])
-    
 
     useEffect(() => {
         const fetchPosts = async () => {
           const res = await axios.get("/products/")
-          setMenu(res.data)
+          console.log(typeof(menu))
+          console.log(typeof(res.data))
+          setMenu(res.data.sort((p1,p2) => {
+            return new Date(p2.createdAt) - new Date(p1.createdAt)
+          }))
         }
         fetchPosts()
       }, [])
@@ -18,7 +21,7 @@ export default function CardList() {
     return (
         <div className="cardlist">
             <div className="box-container">
-              {console.log(typeof(menu)) }
+                {console.log(typeof(menu))}
                 {menu.map((item, index) => (
                     <CardItem key={index} item={item} />
                 ) )}
