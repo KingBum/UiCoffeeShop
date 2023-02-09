@@ -6,17 +6,20 @@ import axios from "axios"
 
 export default function Review() {
     const [reivews, setReviews] = useState([])
-    console.log(reivews)
+    console.log(typeof(reivews))
     useEffect(() => {
         const fetchPosts = async () => {
-          const res1 = await axios.get("/reviews/").then(res => setReviews(res.data))
-        //   setReviews(covert.sort((p1,p2) => {
-        //     return new Date(p2.createdAt) - new Date(p1.createdAt)
-        //   }))
+          const res = await axios.get("/reviews/")
+          const covert = res.data
+          setTimeout(() => {
+            setReviews(covert.sort((p1,p2) => {
+                return new Date(p2.createdAt) - new Date(p1.createdAt)
+            }))
+          }, 2000)
+          
         }
         fetchPosts()
       }, [])
-
     return (
         <section className="review" id="review">
             <Heading title="reviews" mainTitle="what people says" />
