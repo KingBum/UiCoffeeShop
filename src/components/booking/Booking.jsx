@@ -13,7 +13,7 @@ export default function Booking() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const res = await axios.post("https://json-app-coffee.herokuapp.com/api/reviews/", {
+          const res = await axios.post("/reviews/", {
             username : user.user._id,
             desc: desc.current.value,
             voted: voted.current.value,
