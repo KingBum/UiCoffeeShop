@@ -5,6 +5,7 @@ import axios from "axios"
 
 export default function CardList() {
     const [menu, setMenu] = useState([])
+    
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -17,7 +18,7 @@ export default function CardList() {
     return (
         <div className="cardlist">
             <div className="box-container">
-              {typeof(menu)}
+              {console.log(typeof(menu)) }
                 {menu.map((item, index) => (
                     <CardItem key={index} item={item} />
                 ) )}
