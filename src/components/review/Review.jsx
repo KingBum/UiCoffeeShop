@@ -25,7 +25,10 @@ export default function Review() {
             <Heading title="reviews" mainTitle="what people says" />
             <div className="swiper review-slider">
                 <div className="swiper-wrapper">
-                    {console.log(typeof(reivews))}
+                    {console.log((reivews))}
+{setTimeout(() => {
+            console.log(reivews)
+          }, 7000)}
                     {reivews.slice(0,3).map((item, index) =>(
                         <CardReview key={index} userReview={item} />
                     ))}
