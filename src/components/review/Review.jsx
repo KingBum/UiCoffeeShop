@@ -9,7 +9,7 @@ export default function Review() {
     console.log(typeof(reivews))
     useEffect(() => {
         const fetchPosts = async () => {
-          const res = await axios.get("/reviews/")
+          const res = await axios.get("https://json-app-coffee.herokuapp.com/api/reviews/")
           const covert = res.data
           setTimeout(() => {
             setReviews(covert.sort((p1,p2) => {
