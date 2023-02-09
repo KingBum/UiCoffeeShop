@@ -5,13 +5,12 @@ import axios from "axios"
 
 export default function CardList() {
     const [menu, setMenu] = useState([])
-
+    console.log(menu)
     useEffect(() => {
         const fetchPosts = async () => {
           const res = await axios.get("/products/")
-          console.log(typeof(menu))
-          console.log(typeof(res.data))
-          setMenu(res.data.sort((p1,p2) => {
+          const covert = JSON.parse(res.data)
+          setMenu(covert.sort((p1,p2) => {
             return new Date(p2.createdAt) - new Date(p1.createdAt)
           }))
         }

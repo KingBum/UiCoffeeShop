@@ -6,17 +6,14 @@ import axios from "axios"
 
 export default function Review() {
     const [reivews, setReviews] = useState([])
-
-
+    console.log(typeof(reivews))
     useEffect(() => {
         const fetchPosts = async () => {
           const res = await axios.get("/reviews/")
-          console.log(typeof(reivews))
-          console.log(typeof(res.data))
-          setReviews(res.data.sort((p1,p2) => {
+          const covert = JSON.parse(res.data)
+          setReviews(covert.sort((p1,p2) => {
             return new Date(p2.createdAt) - new Date(p1.createdAt)
           }))
-          console.log(typeof(reivews))
         }
         fetchPosts()
       }, [])
